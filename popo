@@ -1,0 +1,61 @@
+Aprendiendo funciones en R
+Santiago Garcilita Arguello
+19/12/20
+Funciones matemáticas
+Para crear y graficar funciones en R siempre debemos primero crear un dominio, así que eso será lo primero que haremos con la función x<-
+x<-(-10: 10)
+x
+##  [1] -10  -9  -8  -7  -6  -5  -4  -3  -2  -1   0   1   2   3   4   5   6   7   8
+## [20]   9  10
+Una vez creado nuestro dominio proseguimos con nuestra primera función, la función constante, para ello seleccionamos un número dentro de nuestro dominio y con la función rep escribimos el total de los números en nuestro dominio.
+fx<-rep(0,21)
+Posteriormente para graficar nuestra función usaremos la función plot, escribiendo x y fx, que serán nuestros dos ejes.
+plot (x, fx)
+
+
+A continuación haremos lo mismo pero con una función lineal, pero introduciendo nuevas variables en la función plot para enriquecer nuestra gráfica. “Type” nos permite darle diseño a nuestra gráfica, mientras que “col” es utilizada para dar los colores que queramos.
+tx<-2*x+2
+plot(x,tx,type="o",col="blue")
+
+
+Como podemos ver, la función type y color nos ayudan a dar color y estructura a nuestra gráfica, a continuación lo haremos con una función cuadrática.
+lx<-x^2
+plot(x,lx,type="o",col="red",xlab="x",ylab="y")
+
+
+xlab y ylab nos permiten nombrar a nuestros ejes como queramos, para finalizar, haremos una función cúbica agregando “main”, que nos permite titular a nuestra gráfica como queramos
+px<-x^3
+plot(x,px,type="o",col="pink",xlab="x",ylab="y",main="gràfica cúbica")
+
+
+Finalmente, usaremos la función dataframe para compilar todos nuestros datos, esto es muy útil para ordenar y recopilar información
+tablarecopilatoria<-data.frame(x,fx,tx,lx,px)
+tablarecopilatoria
+##      x fx  tx  lx    px
+## 1  -10  0 -18 100 -1000
+## 2   -9  0 -16  81  -729
+## 3   -8  0 -14  64  -512
+## 4   -7  0 -12  49  -343
+## 5   -6  0 -10  36  -216
+## 6   -5  0  -8  25  -125
+## 7   -4  0  -6  16   -64
+## 8   -3  0  -4   9   -27
+## 9   -2  0  -2   4    -8
+## 10  -1  0   0   1    -1
+## 11   0  0   2   0     0
+## 12   1  0   4   1     1
+## 13   2  0   6   4     8
+## 14   3  0   8   9    27
+## 15   4  0  10  16    64
+## 16   5  0  12  25   125
+## 17   6  0  14  36   216
+## 18   7  0  16  49   343
+## 19   8  0  18  64   512
+## 20   9  0  20  81   729
+## 21  10  0  22 100  1000
+Además, podemos graficarlo con la función “plot”
+plot(tablarecopilatoria)
+
+
+Para concluir adjunto un video sobre funciones del canal “Matemáticas profe Alex”, junto con mi video en el cual explico con más detenimiento este código, recomiendo ver toda la lista de reproducción para adquirir un conocimiento más completo sobre el tema
+ 
